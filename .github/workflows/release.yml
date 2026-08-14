@@ -63,6 +63,9 @@ jobs:
       - name: Gradle Build
         env:
           BUILD_PLUGIN: none
+          KEYSTORE_PASS: pkkstore123
+          ALIAS_NAME: pkkstore
+          ALIAS_PASS: pkkstore123
         run: |
           echo "sdk.dir=${ANDROID_HOME}" > local.properties
           echo "ndk.dir=${ANDROID_HOME}/ndk/25.0.8775105" >> local.properties
@@ -120,6 +123,10 @@ jobs:
         run: |
           git submodule update --init 'app/*'
       - name: Gradle Build
+        env:
+          KEYSTORE_PASS: pkkstore123
+          ALIAS_NAME: pkkstore
+          ALIAS_PASS: pkkstore123
         run: |
           echo "sdk.dir=${ANDROID_HOME}" > local.properties
           echo "ndk.dir=${ANDROID_HOME}/ndk/25.0.8775105" >> local.properties
